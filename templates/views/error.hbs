@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeatherApp</title>
+    <!--href="folder"   -> use "./   to bring to current folder (in this case public)-->
+    <link rel="stylesheet" href="{{source}}">
+    <link rel="icon" href="/img/ghostface.png">
+    <!--src="path"    ->  relative to current folder (in this case /public-->
+    <script src="/js/app.js"></script>
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <img src="/img/404.png">
+
+        <p>{{message}}</p>
+    </div>
+
+    {{>footer}}
+
+</body>
+
+</html>
