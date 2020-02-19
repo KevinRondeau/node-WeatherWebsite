@@ -14,7 +14,7 @@ weatherForm.addEventListener('submit', (e) => {
     //fetch=get a response from a page ( for exemple a json file) --->then method will tell what to do with the fetched response
     message1.textContent = 'Loading'
     message2.textContent = ''
-    fetch('http://localhost:3000/weather?adress=' + location).then((response) => {
+    fetch('/weather?adress=' + location).then((response) => {
         // //response.json()    --->get the data in a json format
         response.json().then((data) => {
             if (data.error) {
