@@ -7,6 +7,9 @@
 //'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoia3JvbmRlYXUiLCJhIjoiY2s2bnoxaWliMTYwczNkcHVqamc2c3BycSJ9.QsR3M5rMbOSiEEYbWK6SIg'
 //change Los%20Angeles to find other location
 //#endregion
+
+/* --------------------------------- Geocode -------------------------------- */
+//#region 
 const request = require('request')
 
 const geocode = (adress, callback) => {
@@ -29,5 +32,5 @@ const geocode = (adress, callback) => {
 
     })
 }
-
+//#endregion
 module.exports = geocode

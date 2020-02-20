@@ -25,8 +25,8 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 //#endregion
 
-
-//index Page
+/* ---------------------------------- Index --------------------------------- */
+//#region 
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather app',
@@ -34,8 +34,10 @@ app.get('', (req, res) => {
 
     })
 })
+//#endregion
 
-//about Page
+/* ---------------------------------- About --------------------------------- */
+//#region 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
@@ -43,8 +45,10 @@ app.get('/about', (req, res) => {
 
     })
 })
+//#endregion
 
-//help Page
+/* ---------------------------------- Help ---------------------------------- */
+//#region 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
@@ -53,8 +57,10 @@ app.get('/help', (req, res) => {
 
     })
 })
+//#endregion
 
-//weather Page
+/* --------------------------------- Weather -------------------------------- */
+//#region 
 app.get('/weather', (req, res) => {
     if (!req.query.adress) {
         return res.send({
@@ -80,20 +86,10 @@ app.get('/weather', (req, res) => {
     })
 
 })
+//#endregion
 
-// app.get('/products', (req, res) => {
-//     if (!req.query.search) {
-//         return res.send({
-//             error: 'You must provide a search term'
-//         })
-//     }
-//     console.log(req.query)
-//     res.send({
-//         products: []
-//     })
-// })
-
-//404 error in help
+/* --------------------------- 404 Error in /help/ -------------------------- */
+//#region 
 app.get('/help/*', (req, res) => {
     res.render('error', {
         title: '404',
@@ -102,7 +98,11 @@ app.get('/help/*', (req, res) => {
         source: './public/css/style.css'
     })
 })
-//404 error   ---> need to come last
+//#endregion
+
+/* ------------------------------- 404 Error * ------------------------------ */
+//#region 
+//Need to come last since * is the wildcard for everything else
 app.get('*', (req, res) => {
     res.render('error', {
         title: '404',
@@ -111,7 +111,11 @@ app.get('*', (req, res) => {
         source: './css/style.css'
     })
 })
+//#endregion
 
+/* ------------------------------- Listen Port ------------------------------ */
+//#region 
 app.listen(port, () => {
     console.log('Server is Up on port' + port)
 })
+//#endregion
